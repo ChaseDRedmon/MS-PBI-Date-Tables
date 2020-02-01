@@ -1,0 +1,27 @@
+let
+    Source = List.Dates(StartDate, Number.From(EndDate) - Number.From(StartDate) + 1, #duration(1,0,0,0)),
+    #"Converted to Table" = Table.FromList(Source, Splitter.SplitByNothing(), null, null, ExtraValues.Error),
+    #"Renamed Columns" = Table.RenameColumns(#"Converted to Table",{{"Column1", "Date"}}),
+    #"Changed Type" = Table.TransformColumnTypes(#"Renamed Columns",{{"Date", type date}}),
+    #"Inserted Year" = Table.AddColumn(#"Changed Type", "Year", each Date.Year([Date]), Int64.Type),
+    #"Inserted Month" = Table.AddColumn(#"Inserted Year", "Month", each Date.Month([Date]), Int64.Type),
+    #"Inserted Quarter" = Table.AddColumn(#"Inserted Month", "Quarter", each Date.QuarterOfYear([Date]), Int64.Type),
+    #"Inserted Week of Year" = Table.AddColumn(#"Inserted Quarter", "Week of Year", each Date.WeekOfYear([Date]), Int64.Type),
+    #"Inserted Week of Month" = Table.AddColumn(#"Inserted Week of Year", "Week of Month", each Date.WeekOfMonth([Date]), Int64.Type),
+    #"Inserted Day" = Table.AddColumn(#"Inserted Week of Month", "Day", each Date.Day([Date]), Int64.Type),
+    #"Inserted Day of Week" = Table.AddColumn(#"Inserted Day", "Day of Week", each Date.DayOfWeek([Date]), Int64.Type),
+    #"Inserted Day of Year" = Table.AddColumn(#"Inserted Day of Week", "Day of Year", each Date.DayOfYear([Date]), Int64.Type),
+    #"Inserted Month Name" = Table.AddColumn(#"Inserted Day of Year", "Month Name", each Date.MonthName([Date]), type text),
+    #"Inserted Start of Week" = Table.AddColumn(#"Inserted Month Name", "Start of Week", each Date.StartOfWeek([Date]), type date),
+    #"Inserted End of Week" = Table.AddColumn(#"Inserted Start of Week", "End of Week", each Date.EndOfWeek([Date]), type date),
+    #"Inserted Start of Month" = Table.AddColumn(#"Inserted End of Week", "Start of Month", each Date.StartOfMonth([Date]), type date),
+    #"Inserted End of Month" = Table.AddColumn(#"Inserted Start of Month", "End of Month", each Date.EndOfMonth([Date]), type date),
+    #"Inserted Start of Quarter" = Table.AddColumn(#"Inserted End of Month", "Start of Quarter", each Date.StartOfQuarter([Date]), type date),
+    #"Inserted End of Quarter" = Table.AddColumn(#"Inserted Start of Quarter", "End of Quarter", each Date.EndOfQuarter([Date]), type date),
+    #"Inserted Start of Year" = Table.AddColumn(#"Inserted End of Quarter", "Start of Year", each Date.StartOfYear([Date]), type date),
+    #"Inserted End of Year" = Table.AddColumn(#"Inserted Start of Year", "End of Year", each Date.EndOfYear([Date]), type date),
+    #"Added Custom1" = Table.AddColumn(#"Inserted End of Year", "QTR & Year", each Text.Combine({"Q", Number.ToText([Quarter]), Date.ToText([Date], " yyyy")})),
+    #"Added Custom2" = Table.AddColumn(#"Added Custom1", "Named Year", each Text.Combine({"FY ",Date.ToText([Date], "yyyy")})),
+    #"Added Custom3" = Table.AddColumn(#"Added Custom2", "Named Quarter", each Text.Combine({"Q", Number.ToText([Quarter])}))
+in
+    #"Added Custom3"

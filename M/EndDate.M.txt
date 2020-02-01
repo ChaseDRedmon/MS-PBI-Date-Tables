@@ -1,0 +1,6 @@
+let
+    Source = Data,
+    #"Removed Other Columns" = Table.SelectColumns(Source,{"Date"}),
+    #"Calculated Latest" = List.Max(#"Removed Other Columns"[Date])
+in
+    #"Calculated Latest"

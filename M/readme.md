@@ -1,0 +1,1 @@
+This folder contains PowerQuery M code for use within the Excel or Power BI PowerQuery editors. Create a blank query within the editor, navigate to the View tab, then click the Advanced Editor button to open the M Code Editor. Copy/paste the queries into the editor 

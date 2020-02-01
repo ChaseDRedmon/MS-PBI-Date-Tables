@@ -1,0 +1,1 @@
+Total YTD LY = CALCULATE([Total YTD], SAMEPERIODLASTYEAR(Dates[Date]))

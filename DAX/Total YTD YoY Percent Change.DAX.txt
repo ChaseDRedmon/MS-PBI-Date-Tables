@@ -1,0 +1,1 @@
+Total YTD YoY% = DIVIDE([Total YTD] - [Total YTD LY], [Total YTD LY])

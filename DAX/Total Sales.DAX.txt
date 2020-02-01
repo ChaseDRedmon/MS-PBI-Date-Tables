@@ -1,0 +1,1 @@
+Total Sales = SUM('Data'[Sales])

@@ -1,0 +1,1 @@
+Total Volume = SUM('Data'[Volume])

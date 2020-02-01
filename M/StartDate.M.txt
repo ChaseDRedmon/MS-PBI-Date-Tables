@@ -1,0 +1,7 @@
+let
+    Source = Data,
+    #"Removed Other Columns" = Table.SelectColumns(Source,{"Date"}),
+    #"Calculated Earliest" = List.Min(#"Removed Other Columns"[Date]),
+    #"Calculated Start of Year" = Date.StartOfYear(#"Calculated Earliest")
+in
+    #"Calculated Start of Year"
