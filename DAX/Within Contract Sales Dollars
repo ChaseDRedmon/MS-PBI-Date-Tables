@@ -1,0 +1,16 @@
+Within Contract - Sales Dollars = 
+
+CALCULATE(
+    [Total Sales],
+    DATESBETWEEN(
+        Dates[Date],
+        CALCULATE(
+            MIN(RebateLevels[Contract Start Date]),
+            TODAY() >= RebateLevels[Contract Start Date]
+        ),
+        CALCULATE(
+            MIN(RebateLevels[Contract End Date]),
+            TODAY() <= RebateLevels[Contract End Date]
+        )
+    )
+)
