@@ -1,0 +1,28 @@
+// This is a calculated column measure
+
+VAR PossibleNullContainingColumnOne = ISBLANK(Table[ColumnA]) // check if ColumnA is null
+VAR PossibleNullContainingColumnTwo = ISBLANK(Table[ColumnB]) // check if ColumnB is null
+
+VAR LogicTest = PossibleNullContainingColumnOne > PossibleNullContainingColumnTwo 
+// a simple logic test
+
+/*
+Because of a language limitation within DAX, we have to use integral values, rather than boolean values. 
+IF statements no longer return NULL. They can only return true or false. 
+We require true, false, and null for these formulas. 
+This Switch statement converts the true/false values from the IsLate formula to integral values for use within the IF statement below
+*/
+
+VAR result = SWITCH(
+    LogicTest,
+    TRUE(), 1,
+    FALSE(), 0
+    )
+    
+RETURN  
+    IF
+    (
+        OR(IsActualDeliveryNull, IsOriginalETANull), // I want to check if either ColumnOne or Column two is null, if either are, we are going to return null
+        -1, // this is our pseudo null value
+        result // this is our true/false value
+    )
