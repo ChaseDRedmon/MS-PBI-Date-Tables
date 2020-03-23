@@ -10,7 +10,7 @@ VAR LogicTest = PossibleNullContainingColumnOne > PossibleNullContainingColumnTw
 Because of a language limitation within DAX, we have to use integral values, rather than boolean values. 
 IF statements no longer return NULL. They can only return true or false. 
 We require true, false, and null for these formulas. 
-This Switch statement converts the true/false values from the IsLate formula to integral values for use within the IF statement below
+This Switch statement converts the true/false values from the LogicTest formula to integral values for use within the IF statement below
 */
 
 VAR result = SWITCH(
