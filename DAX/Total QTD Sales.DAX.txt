@@ -1,1 +1,0 @@
-Total QTD Sales = TOTALQTD([Total Sales], Dates[Date]) 

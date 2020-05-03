@@ -1,0 +1,1 @@
+Completed Month Sales = CALCULATE([Cumulative Sales], DATESBETWEEN(Dates[Date], STARTOFYEAR(Dates[Date]), EOMONTH([LastSalesDate], -1)))

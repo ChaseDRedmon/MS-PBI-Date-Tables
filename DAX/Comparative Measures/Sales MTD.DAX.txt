@@ -1,0 +1,1 @@
+Sales MTD = IF (MIN(Dates[Date]) <= [LastSalesDate], [Cumulative MTD Sales], BLANK())

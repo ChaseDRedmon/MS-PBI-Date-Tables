@@ -1,0 +1,4 @@
+Sales MTD LY = 
+CALCULATE( [Sales MTD],
+    SAMEPERIODLASTYEAR(
+        INTERSECT( VALUES( Dates[Date] ), DATESBETWEEN( Dates[Date], BLANK(), [LastSalesDate] ) ) ) )

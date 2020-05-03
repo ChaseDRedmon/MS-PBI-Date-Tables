@@ -1,0 +1,1 @@
+Cumulative Previous QTD Sales = CALCULATE([Cumulative QTD Sales], DATEADD(Dates[Date], -1, QUARTER))

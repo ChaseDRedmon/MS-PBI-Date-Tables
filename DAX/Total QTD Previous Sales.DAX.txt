@@ -1,1 +1,0 @@
-Total QTD Previous Sales = CALCULATE([Total QTD Sales], DATEADD(Dates[Date], -1, QUARTER))

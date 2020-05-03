@@ -1,0 +1,1 @@
+Cumulative YTD = TOTALYTD([Cumulative Sales], Dates[Date])

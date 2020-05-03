@@ -1,1 +1,0 @@
-Total MTD Sales = TOTALMTD([Total Sales], Dates[Date])

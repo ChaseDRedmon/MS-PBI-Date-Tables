@@ -1,0 +1,1 @@
+Cumulative Previous MTD Sales = CALCULATE([Cumulative MTD Sales], DATEADD(Dates[Date], -1, MONTH))

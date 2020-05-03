@@ -1,0 +1,1 @@
+Cumulative YTD YoY% = DIVIDE([Cumulative YTD] - [Cumulative YTD LY], [Cumulative YTD LY])

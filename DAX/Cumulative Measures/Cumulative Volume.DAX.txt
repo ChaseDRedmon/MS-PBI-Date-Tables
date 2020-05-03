@@ -1,0 +1,1 @@
+Cumulative Volume = SUM('Data'[Volume])

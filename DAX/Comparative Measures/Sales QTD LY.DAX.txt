@@ -1,0 +1,4 @@
+Sales QTD LY = 
+CALCULATE( [Sales QTD],
+    SAMEPERIODLASTYEAR(
+        INTERSECT( VALUES( Dates[Date] ), DATESBETWEEN( Dates[Date], BLANK(), [LastSalesDate] ) ) ) )

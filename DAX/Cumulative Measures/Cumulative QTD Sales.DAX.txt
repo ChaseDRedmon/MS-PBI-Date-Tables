@@ -1,0 +1,1 @@
+Cumulative QTD Sales = TOTALQTD([Cumulative Sales], Dates[Date]) 

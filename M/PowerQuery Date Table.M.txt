@@ -22,6 +22,7 @@ let
     #"Inserted End of Year" = Table.AddColumn(#"Inserted Start of Year", "End of Year", each Date.EndOfYear([Date]), type date),
     #"Added Custom1" = Table.AddColumn(#"Inserted End of Year", "QTR & Year", each Text.Combine({"Q", Number.ToText([Quarter]), Date.ToText([Date], " yyyy")})),
     #"Added Custom2" = Table.AddColumn(#"Added Custom1", "Named Year", each Text.Combine({"FY ",Date.ToText([Date], "yyyy")})),
-    #"Added Custom3" = Table.AddColumn(#"Added Custom2", "Named Quarter", each Text.Combine({"Q", Number.ToText([Quarter])}))
+    #"Added Custom3" = Table.AddColumn(#"Added Custom2", "Named Quarter", each Text.Combine({"Q", Number.ToText([Quarter])})),
+    #"Added Custom" = Table.AddColumn(#"Added Custom3", "Days from QTR Start", each [Date] - [Start of Quarter])
 in
-    #"Added Custom3"
+    #"Added Custom"

@@ -1,6 +1,7 @@
 let
     Source = Data,
     #"Removed Other Columns" = Table.SelectColumns(Source,{"Date"}),
-    #"Calculated Latest" = List.Max(#"Removed Other Columns"[Date])
+    #"Calculated Latest" = List.Max(#"Removed Other Columns"[Date]),
+    #"Calculated End of Year" = Date.EndOfYear(#"Calculated Latest")
 in
-    #"Calculated Latest"
+    #"Calculated End of Year"

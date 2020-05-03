@@ -1,0 +1,1 @@
+Sales Previous QTD = CALCULATE('New Sales Measures'[Sales QTD], DATEADD(Dates[Date], -1, QUARTER)) 

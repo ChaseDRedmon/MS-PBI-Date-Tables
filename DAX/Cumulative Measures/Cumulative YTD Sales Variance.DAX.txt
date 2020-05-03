@@ -1,0 +1,1 @@
+Cumulative YTD Sales Difference = [Cumulative YTD] - [Cumulative YTD LY]

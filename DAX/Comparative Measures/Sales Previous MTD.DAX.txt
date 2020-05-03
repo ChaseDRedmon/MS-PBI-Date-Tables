@@ -1,0 +1,1 @@
+Sales Previous MTD = CALCULATE('New Sales Measures'[Sales MTD], DATEADD(Dates[Date], -1, MONTH)) 

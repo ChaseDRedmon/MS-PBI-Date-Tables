@@ -1,7 +1,7 @@
 Within Contract - Sales Dollars = 
 
 CALCULATE(
-    [Total Sales],
+    [Cumulative Sales],
     DATESBETWEEN(
         Dates[Date],
         CALCULATE(

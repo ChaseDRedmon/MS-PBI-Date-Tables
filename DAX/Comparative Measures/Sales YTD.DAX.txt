@@ -1,0 +1,1 @@
+Sales YTD = IF (MIN(Dates[Date]) <= [LastSalesDate], [Cumulative YTD Sales], BLANK())

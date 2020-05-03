@@ -1,0 +1,1 @@
+Sales QTD = IF (MIN(Dates[Date]) <= [LastSalesDate], [Cumulative QTD Sales], BLANK())
