@@ -10,7 +10,7 @@ The PowerQuery Custom Date tables are found in the "M" source code folder. These
 
 1. From your dataset, the queries will find the minimum date present within the data, that is the "Start Date." From there, it will calculate the First of the Year. That is, if your minimum date is 04/25/2020, the query will take this date and calculate the Start of the Year from it. The end result is 01/01/2020.
 
-2. The "End Date" will find the maximum date within your dataset. 
+2. The "End Date" will find the maximum date within your dataset and calculate the year end date from that.
 
 3. The Dates Table will create a contiguous date range from the Start Date to the End Date.
 
