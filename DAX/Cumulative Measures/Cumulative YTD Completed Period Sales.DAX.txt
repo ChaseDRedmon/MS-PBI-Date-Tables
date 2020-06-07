@@ -1,4 +1,4 @@
-Total Completed Period Sales = 
+Cumulative YTD Completed Period Sales = 
 CALCULATE( [Cumulative YTD],
         INTERSECT( VALUES( Dates[Date] ), DATESBETWEEN( Dates[Date], BLANK(), [Last Date from Previous Month] ) ) )
 // total ytd sales based on the last date from the previous month of the last date of sale. E.g. EOMONTH(Last Date of Sale)
