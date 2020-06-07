@@ -31,4 +31,5 @@ You will need to create an active relationship between your "Dates" table and yo
 <h3> Thanks </h3>
 
 Thanks to Enterprise DNA Team - https://enterprisedna.co
+
 Thanks to Jeroen ter Heerdt - https://www.dutchdatadude.com/
