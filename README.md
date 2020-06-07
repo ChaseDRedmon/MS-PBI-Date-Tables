@@ -2,7 +2,7 @@
 
 <h2> Getting Started </h2>
 
-Disclaimer: This code is designed for use with Power BI. DAX Formulas will *only* work within Power BI. While the PowerQuery M Code is designed for use within Power BI, the code should also work within MS Excel.
+Disclaimer: This code is designed for use with Power BI. DAX Formulas have been validated to work within Power BI and *should* work within MS Excel, provided the correct add-ons and extensions are installed. While the PowerQuery M Code is designed for use within Power BI, the code should also work within MS Excel.
 
 <h3> Setting up the PowerQuery Date Tables </h3>
 
@@ -27,3 +27,8 @@ The DAX formulas can be found within the DAX folder. Create a new custom measure
 <h3> Creating the active date relationship </h3>
 
 You will need to create an active relationship between your "Dates" table and your data table. Click on the relationships view button to view the relationships window. Click the "Manage Relationships" button to open up the management window. Click "new" to create a new relationship. From the top drop down box, select the dates table, then click the Date column. In the bottom drop down, click your data table, then select your date column. Then click okay. An active relationship between the "Dates" table and your dataset has been created.
+
+<h3> Thanks </h3>
+
+Thanks to Enterprise DNA Team - https://enterprisedna.co
+Thanks to Jeroen ter Heerdt - https://www.dutchdatadude.com/
