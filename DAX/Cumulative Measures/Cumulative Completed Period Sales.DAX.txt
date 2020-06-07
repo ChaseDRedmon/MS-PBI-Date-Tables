@@ -1,0 +1,2 @@
+Cumulative Completed Period Sales = IF (MIN(Dates[Date]) <= EOMONTH([LastSalesDate], -1), [Cumulative Sales], BLANK())
+// this is a cumulative sum of all sales up to the last date of the previous month based on the last date of sale
