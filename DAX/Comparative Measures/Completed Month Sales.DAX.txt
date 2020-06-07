@@ -1,1 +1,0 @@
-Completed Month Sales = IF (MIN(Dates[Date]) <= EOMONTH([LastSalesDate], -1), [Cumulative Sales], BLANK())

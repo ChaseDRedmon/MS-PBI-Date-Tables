@@ -1,0 +1,2 @@
+Last Date from Previous Month = EOMONTH([Last Date of Sale], -1) 
+// returns the last date of the previous month based on the LastDate of Sales. E.g. last date of sale is 5/15/2020, the returned date will be 4/30/2020 as that is the last date of the previous month
